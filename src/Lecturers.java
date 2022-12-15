@@ -40,13 +40,22 @@ public void addCourse(Courses course) {
 	courses[courseCount]=course;
 	courseCount++;
 	}
-	public void addGrades(int midTerm,int finalTerm,Students student) {
-		if()) {
+	public void addGrades(int courseCode,int midTerm,int finalTerm,Students student) {
+		for(int i=0;i<student.getGraduateCourses().length;i++) {
+			if(courseCode==student.getGraduateCourses()[i].getCourseCode()) {
+				student.getGraduateCourses()[i].setMidTerm(midTerm);
+				student.getGraduateCourses()[i].setFinalExam(finalTerm);
+			}
 			
 		}
-		else if()){
+		for(int i=0;i<student.getUnderGraduateCourses().length;i++) {
+			if(courseCode==student.getUnderGraduateCourses()[i].getCourseCode()) {
+				student.getUnderGraduateCourses()[i].setMidTerm(midTerm);
+				student.getUnderGraduateCourses()[i].setFinalExam(finalTerm);
+			}
 			
 		}
+		
 	}
 
 
