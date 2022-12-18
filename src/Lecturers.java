@@ -40,14 +40,9 @@ public void addCourse(Courses course) {
 	courses[courseCount]=course;
 	courseCount++;
 	}
-	public void addGrades(int courseCode,int midTerm,int finalTerm,Students student) {
-		for(int i=0;i<student.getGraduateCourses().length;i++) {
-			if(courseCode==student.getGraduateCourses()[i].getCourseCode()) {
-				student.getGraduateCourses()[i].setMidTerm(midTerm);
-				student.getGraduateCourses()[i].setFinalExam(finalTerm);
-			}
-			
-		}
+	public void addGradesUnderGraduate(int courseCode,int midTerm,int finalTerm,Students student) {
+		
+		
 		for(int i=0;i<student.getUnderGraduateCourses().length;i++) {
 			if(courseCode==student.getUnderGraduateCourses()[i].getCourseCode()) {
 				student.getUnderGraduateCourses()[i].setMidTerm(midTerm);
@@ -57,6 +52,32 @@ public void addCourse(Courses course) {
 		}
 		
 	}
-
+	public void addGradesGraduate(int courseCode,int midTerm,int finalTerm,Graduate student) {
+		for(int i=0;i<student.getGraduateCourses().length;i++) {
+			if(courseCode==student.getGraduateCourses()[i].getCourseCode()) {
+				student.getGraduateCourses()[i].setMidTerm(midTerm);
+				student.getGraduateCourses()[i].setFinalExam(finalTerm);
+			}
+			}
+	}
+	public boolean checkCertificate(Students student) {
+	  if(student.getUnderGraduateCourses().length>=40&&student.calculateGPA()>=2.0) {
+		  return true;
+	  }
+	  return false;
+	}
+	public boolean checkCertificate(Master master) {
+		  if(master.getGraduateCourses().length>=7&&master.calculateGPA()>=2.5) {
+			  return true;
+		  }
+		  return false;
+		}
+	public boolean checkCertificate(Doctoral doctoral) {
+		  if(doctoral.getGraduateCourses().length>=8&&doctoral.calculateGPA()>=3.0) {
+			  return true;
+		  }
+		  return false;
+		}
+	
 
 }

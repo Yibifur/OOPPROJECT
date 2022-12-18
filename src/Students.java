@@ -12,10 +12,7 @@ public class Students {
 	private String surName;
 	private int year;
 	private Courses[] underGraduateCourses;
-	private Courses[] graduateCourses;
 	private int underGraduateCourseCount=0;
-	private int GraduateCourseCount=0;
-	private int graduateStudentCount=0;
 	private int underGraduateStudentCount=0;
 	
 	//constructor
@@ -49,23 +46,17 @@ public class Students {
 	public Courses[] getUnderGraduateCourses() {
 		return underGraduateCourses;
 	}
-	public Courses[] getGraduateCourses() {
-		return graduateCourses;
+	
+	public int getUnderGraduateStudentCount() {
+		return underGraduateStudentCount;
 	}
-	public int getGraduateCourseCount() {
-		return GraduateCourseCount;
-	}
+	
 	//methods
 	public void addCourseToStudent(Courses course) {
-	TypeOfCourse2 type1=TypeOfCourse2.GRADUATE;
-	TypeOfCourse2 type2=TypeOfCourse2.UNDERGRADUATE;
-		if(type1.equals(course.type)) {
-			graduateCourses[GraduateCourseCount]=course;
-			course.getCourseStudents()[graduateStudentCount]=Students.this;
-			GraduateCourseCount++;
-			graduateStudentCount++;
-		}
-		else if(type2.equals(course.type)){
+	
+	TypeOfCourse2 type=TypeOfCourse2.UNDERGRADUATE;
+		
+		 if(type.equals(course.type)){
 			underGraduateCourses[underGraduateCourseCount]=course;
 			course.getCourseStudents()[underGraduateStudentCount]=Students.this;
 			underGraduateCourseCount++;
@@ -86,8 +77,20 @@ public class Students {
 			System.out.println(getId()+" numaralı"+getName()+ " "+getSurName()+" adlı  öğrenciye "+underGraduateCourseCount+" tane dersin ataması yapılmıştır.");
 			
 		}
-		
-		
+		}
+	public double calculateGPA( ) {
+		double[] averageGrades=new double[this.getUnderGraduateCourses().length];
+		double total=0.0;
+		for(int i=0;i<this.getUnderGraduateCourses().length;i++) {
+			averageGrades[i]=(double)((this.getUnderGraduateCourses()[i].getMidTerm()*4/10+this.getUnderGraduateCourses()[i].getFinalExam()*6/10)/25);
+		}
+		for(int j=0;j<averageGrades.length;j++) {
+			total=total+averageGrades[j];
+		}
+		total=total/averageGrades.length;
+		return total;
+	}
 	}
 	
-}
+	
+	

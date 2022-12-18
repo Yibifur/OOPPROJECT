@@ -38,5 +38,6 @@ public class Areas {
 	public void setGarden(String garden) {
 		this.garden = garden;
 	}
+	//functions
 	
 }
