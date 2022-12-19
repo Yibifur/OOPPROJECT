@@ -1,0 +1,52 @@
+public class Attendance extends Students {
+//Variables
+	private int attend;
+	private String name;
+	private String surName;
+	private int id;
+	private int year;
+	private Courses[] courseGrade;
+	private Courses[] allCourses;
+
+	//constructor
+	 public Attendance(int id,String name, String surName, int year) {
+		super();
+		this.id=id;
+		this.name = name;
+		this.surName = surName;
+		this.year = year;
+		this.courseGrade = courseGrade;
+		this.attend = attend;
+	 }
+	//getter
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+
+	public String getSurName() {
+		return surName;
+	}
+
+	public int getYear() {
+		return year;
+	}
+	public int getAttend() {
+		return attend;
+	}
+	public Courses[] getCourseDegree() {
+	return courseGrade;
+	}
+	public Courses[] getAllCourses() {
+		return allCourses;
+	}
+	//methods
+	public void addGrades(int midTerm,int finalTerm,Students student) {
+		if(attend==0) {
+			System.out.println("bu öğrenci hiçbir katılım sağlamadığı için ders notları görünmemektedir.");
+		}
+	}
+	
+}
