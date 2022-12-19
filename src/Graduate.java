@@ -1,6 +1,6 @@
 
 
-public class Graduate extends Students{
+public abstract class Graduate extends Students{
 //variables
 	
 	

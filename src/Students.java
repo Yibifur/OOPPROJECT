@@ -90,6 +90,9 @@ public class Students {
 		total=total/averageGrades.length;
 		return total;
 	}
+	public void showCourses() {
+		
+	}
 	}
 	
 	

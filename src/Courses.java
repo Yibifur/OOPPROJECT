@@ -98,9 +98,9 @@ public Students[] getCourseStudents() {
 
 //methods
 public void lecturerInfo() {
-	System.out.println("öğretmenin adı: "+lecturer.getName());
-	System.out.println("öğretmenin soyadı: "+lecturer.getSurName());
-	System.out.println("öğretmenin numarası: "+lecturer.getNumber());
+	System.out.println("name of the lecturer "+lecturer.getName());
+	System.out.println("surname of the lecturer: "+lecturer.getSurName());
+	System.out.println("number of the lecturer: "+lecturer.getNumber());
 	System.out.println();
 }
 public void addStudentToCourse(Students student) {
@@ -111,10 +111,10 @@ public void addStudentToCourse(Students student) {
 public void studentIdInformation() {
 	
 	for(int i=0;i<studentCount;i++) {
-		System.out.println((i+1)+". öğrencinin adı: "+this.courseStudents[i].getName());
-		System.out.println((i+1)+".öğrencinin  soyadı: "+this.courseStudents[i].getSurName());
-		System.out.println((i+1)+".öğrencinin numarası: "+this.courseStudents[i].getId());
-		System.out.println((i+1)+".öğrencinin numarası: "+this.courseStudents[i].getYear());
+		System.out.println((i+1)+". name of the student: "+this.courseStudents[i].getName());
+		System.out.println((i+1)+".surname of the student: "+this.courseStudents[i].getSurName());
+		System.out.println((i+1)+".ID of the student: "+this.courseStudents[i].getId());
+		System.out.println((i+1)+".number of the student: "+this.courseStudents[i].getYear());
 		System.out.println();
 	}
 }
